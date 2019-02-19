@@ -1,0 +1,15 @@
+mutation {
+  # Create first user
+  createUser(
+    data: {
+      email: "bob.smith@bobsmith.com",
+      first_name: "Bob",
+      last_name: "Smith",
+      username: "bobbyboy",
+      password: "password1",
+      role: ADMINISTRATOR,
+    }
+  ) {
+    id
+  }
+}

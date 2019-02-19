@@ -1,0 +1,9 @@
+projects:
+  my-api:
+    schemaPath: schema.graphql
+    extensions:
+      endpoints:
+        dev: 'http://localhost:4466'
+  prisma:
+    extensions:
+      prisma: database/prisma.yml

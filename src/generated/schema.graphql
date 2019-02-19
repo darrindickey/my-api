@@ -1,0 +1,32 @@
+# import User from '../../../database/datamodel.graphql'
+
+type Query {
+  info: String!
+}
+
+type Mutation {
+  signup(email: String!, password: String!, name: String!): AuthPayload
+  login(email: String!, password: String!): AuthPayload
+}
+
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type User {
+  id: ID!
+  first_name: String!
+  last_name: String!
+  username: String!
+  email: String!
+  password: String!
+  image: String
+  role: Roles! @default(value: REGISTERED_USER)
+}
+
+enum Roles {
+  ADMINISTRATOR
+  REGISTERED_USER
+  UNREGISTERED_USER
+}
