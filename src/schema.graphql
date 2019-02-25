@@ -1,7 +1,10 @@
-# import User from '../../../database/datamodel.graphql'
+# import User from './../database/datamodel.graphql'
 
 type Query {
   info: String!
+  fetchUser(first_name: String!, last_name: String!, username: String!, email: String!): User
+  user(first_name: String!, last_name: String!, username: String!, email: String!): [User]!
+  users(first_name: String, last_name: String, username: String, email: String): [User]!
 }
 
 type Mutation {
@@ -22,7 +25,7 @@ type User {
   email: String!
   password: String!
   image: String
-  role: Roles! @default(value: REGISTERED_USER)
+  role: Roles!
 }
 
 enum Roles {

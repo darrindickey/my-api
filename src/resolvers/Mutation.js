@@ -1,5 +1,7 @@
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const { Prisma } = require('prisma-binding')
+const { ApolloServer } = require('apollo-server')
 const { APP_SECRET, getUserId } = require('../utils')
 
 async function signup(parent, args, context, info) {
